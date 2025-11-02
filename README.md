@@ -77,32 +77,17 @@ smart-city-scheduling/
 │       ├── topo/TopologicalSortTest.java
 │       └── dagsp/DAGShortestPathTest.java
 ├── data/
-│   ├── tasks.json                         # Example dataset
-│   ├── small_*.json                       # Small test cases (6-10 nodes)
-│   ├── medium_*.json                      # Medium cases (10-20 nodes)
-│   └── large_*.json                       # Large cases (20-50 nodes)
+│   ├── tasks.json                         # Example dataset                                     
 ├── pom.xml                                # Maven build configuration
 └── README.md                              # This file
 ```
 
 ---
 
-## 🔧 Requirements
-
-- **Java**: JDK 11 or higher
-- **Maven**: 3.6+ for building
-- **Dependencies**:
-  - JUnit 5 (testing)
-  - org.json (JSON parsing)
-
----
-
-##  Installation & Build
-
 ### Clone the Repository
 
 ```bash
-git clone <your-repository-url>
+git clone <repository>
 cd smart-city-scheduling
 ```
 
@@ -134,9 +119,6 @@ mvn package
 # Using Maven
 mvn exec:java -Dexec.mainClass="com.smartcity.Main"
 
-# Or with custom dataset
-mvn exec:java -Dexec.mainClass="com.smartcity.Main" -Dexec.args="data/medium_1.json"
-
 # Using compiled JAR
 java -cp target/smart-city-scheduling-1.0.jar com.smartcity.Main data/tasks.json
 ```
@@ -145,11 +127,11 @@ java -cp target/smart-city-scheduling-1.0.jar com.smartcity.Main data/tasks.json
 
 ```
 ╔════════════════════════════════════════════════════╗
-║   Smart City/Campus Task Scheduling System        ║
+║      Smart City/Campus Task Scheduling System      ║
 ╚════════════════════════════════════════════════════╝
 
  Loading graph from: data/tasks.json
-✓ Graph loaded successfully
+  Graph loaded successfully
   Vertices: 8
   Edges: 7
   ...
@@ -227,16 +209,6 @@ Path: [1, 2]
 **Weight Model**: Uses edge weights as specified in JSON (`weight_model: "edge"`)
 
 ---
-
-##  Dataset Information
-
-### Dataset Categories
-
-| Category | Nodes | Edges | Description | Files |
-|----------|-------|-------|-------------|-------|
-| Small | 6-10 | 8-15 | Simple structures, 1-2 cycles or pure DAG | `small_*.json` (3 files) |
-| Medium | 10-20 | 15-35 | Mixed structures, multiple SCCs | `medium_*.json` (3 files) |
-| Large | 20-50 | 40-100 | Performance testing, complex dependencies | `large_*.json` (3 files) |
 
 ### Dataset Characteristics
 
@@ -382,4 +354,4 @@ This is an academic project. For improvements:
 
 **Daniyar Kairatov**  
 Course: Desing and Analysis of Algorithms
-Assignment 4: SCC, Topological Sort & DAG Shortest Paths
+/ Assignment 4: SCC, Topological Sort & DAG Shortest Paths
